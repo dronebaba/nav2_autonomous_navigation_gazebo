@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <link
+        name="rear_castor_link">
+        <inertial>
+        <mass value="0.5"/>
+            <origin
+              xyz="0.00566273525640093 -0.00989412534430653 -1.89986618215343E-07"
+              rpy="0 0 0" />
+        <inertia
+            ixx="0.000209361851648379"
+            ixy="1.5320155892368E-05"
+            ixz="-1.41603895661375E-10"
+            iyy="0.000207403161472826"
+            iyz="2.96359099477467E-11"
+            izz="0.000343890788216305" />
+        </inertial>
+        <visual>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <sphere radius="0.05"/>
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+                <sphere radius="0.05"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rear_castor_joint"
+        type="fixed">
+        <origin
+            xyz="-0.15 0.0 -0.025"
+            rpy="-1.5708 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="rear_castor_link" />
+        <axis
+        xyz="0 0 1" />
+        <dynamics
+        damping="0"
+        friction="0" />
+    </joint>
+    <gazebo reference="rear_castor_link">
+        <visual>
+            <material> <!-- Green -->
+                <ambient>0.0 0.1 0.0 1.0</ambient>
+                <diffuse>0.0 1.0 0.0 1.0</diffuse>
+                <specular>0.0 0.5 0.0 1.0</specular>
+                <emissive>0.0 0.0 0.0 1.0</emissive>
+            </material>               
+        </visual>
+        <collision>
+            <surface>
+                <friction>
+                  <ode>
+                    <mu>0.0</mu> <!-- Friction coefficient -->
+                    <mu2>0.0</mu2>
+                  </ode>
+                </friction>
+              </surface>
+        </collision>
+    </gazebo>
+
+
+    <link
+        name="front_castor_link">
+        <inertial>
+        <mass value="0.5"/>
+            <origin
+              xyz="0.00566273525640093 -0.00989412534430653 -1.89986618215343E-07"
+              rpy="0 0 0" />
+        <inertia
+            ixx="0.000209361851648379"
+            ixy="1.5320155892368E-05"
+            ixz="-1.41603895661375E-10"
+            iyy="0.000207403161472826"
+            iyz="2.96359099477467E-11"
+            izz="0.000343890788216305" />
+        </inertial>
+        <visual>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <sphere radius="0.05"/>
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+                <sphere radius="0.05"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint
+        name="front_castor_joint"
+        type="fixed">
+        <origin
+            xyz="0.15 0.0 -0.025"
+            rpy="1.5708 0 0" />
+        <parent
+        link="base_link" />
+        <child
+        link="front_castor_link" />
+        <axis
+        xyz="0 0 1" />
+        <dynamics
+        damping="0"
+        friction="0" />
+    </joint>
+    <gazebo reference="front_castor_link">
+        <visual>
+            <material> <!-- Green -->
+                <ambient>0.0 0.1 0.0 1.0</ambient>
+                <diffuse>0.0 1.0 0.0 1.0</diffuse>
+                <specular>0.0 0.5 0.0 1.0</specular>
+                <emissive>0.0 0.0 0.0 1.0</emissive>
+            </material>               
+        </visual>
+        <collision>
+            <surface>
+                <friction>
+                  <ode>
+                    <mu>0.0</mu> <!-- Friction coefficient -->
+                    <mu2>0.0</mu2>
+                  </ode>
+                </friction>
+              </surface>
+        </collision>
+    </gazebo>
+
+</robot>
