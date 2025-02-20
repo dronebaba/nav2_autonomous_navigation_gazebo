@@ -147,10 +147,11 @@ int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<WaypointClient>();
 
+    // Add or delete the waypoints
     std::vector<geometry_msgs::msg::PoseStamped> waypoints = {
-        create_pose(6.6, 6.6, 0),
-        create_pose(4.4, 4.4, 0),
-        create_pose(6.6, 6.6, 0)
+        create_pose(6.6, 6.6, 0), // waypoint_1 
+        create_pose(4.4, 4.4, 0), // waypoint_2
+        create_pose(6.6, 6.6, 0)  // waypoint_3
     };
 
     node->send_waypoints(waypoints);
